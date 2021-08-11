@@ -44,14 +44,16 @@ namespace Framework.Common
     {
         public T Data { get; set; }
 
-        public static Result<T> Fail()
+        public new static Result<T> Fail()
         {
             Result<T> result = new Result<T>();
             result.Succeeded = false;
             return result;
         }
 
+#pragma warning disable 108,114
         public static Result<T> Fail(string message)
+
         {
             Result<T> result = new Result<T>();
             result.Succeeded = false;
@@ -102,5 +104,7 @@ namespace Framework.Common
         public static Task<Result<T>> SuccessAsync(T data) => Task.FromResult<Result<T>>(Result<T>.Success(data));
 
         public static Task<Result<T>> SuccessAsync(T data, string message) => Task.FromResult<Result<T>>(Result<T>.Success(data, message));
+        
+#pragma warning restore 108,114
     }
 }
