@@ -4,7 +4,7 @@ using Application.Blogs.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Blogs
+namespace Api.Controllers.Blogs
 {
     [ApiController]
     [Route("[controller]")]

@@ -5,20 +5,20 @@ using Application.Blogs.Models;
 using Application.Interfaces;
 using AutoMapper;
 using Framework.Application;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Blogs.Queries
 {
     public class GetBlogsQuery : IQuery<IEnumerable<BlogDto>>
     {
-        
     }
-    
+
     public class GetBlogsQueryHandler : IQueryHandler<GetBlogsQuery, IEnumerable<BlogDto>>
     {
         private readonly IBlogRepository _blogRepository;
         private readonly IMapper _mapper;
 
-        public GetBlogsQueryHandler( IBlogRepository blogRepository, IMapper mapper)
+        public GetBlogsQueryHandler(IBlogRepository blogRepository, IMapper mapper)
         {
             _blogRepository = blogRepository;
             _mapper = mapper;

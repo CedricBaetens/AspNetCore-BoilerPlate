@@ -1,7 +1,7 @@
 ﻿using System;
 using Application.Interfaces;
 
-namespace Api
+namespace Api.Services
 {
     public class SystemDateTimeService : IDateTimeService
     {

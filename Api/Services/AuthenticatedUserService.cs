@@ -2,7 +2,7 @@
 using Application.Interfaces;
 using Microsoft.AspNetCore.Http;
 
-namespace Api
+namespace Api.Services
 {
     public class AuthenticatedUserService : IAuthenticatedUserService
     {

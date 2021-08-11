@@ -13,7 +13,7 @@ namespace Application.Interfaces
         Task<List<T>> GetPagedReponseAsync(int pageNumber, int pageSize);
     
         Task<T> AddAsync(T entity);
-        Task UpdateAsync(T entity);
+        // Task UpdateAsync(T entity);
         Task DeleteAsync(T entity);
     }
 }

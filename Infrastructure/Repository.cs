@@ -41,11 +41,11 @@ namespace Infrastructure
             await _dbContext.Set<T>().AddAsync(entity);
             return entity;
         }
-        public Task UpdateAsync(T entity)
-        {
-            _dbContext.Entry(entity).CurrentValues.SetValues(entity);
-            return Task.CompletedTask;
-        }
+        // public Task UpdateAsync(T entity)
+        // {
+        //     _dbContext.Entry(entity).CurrentValues.SetValues(entity);
+        //     return Task.CompletedTask;
+        // }
         public Task DeleteAsync(T entity)
         {
             _dbContext.Set<T>().Remove(entity);
