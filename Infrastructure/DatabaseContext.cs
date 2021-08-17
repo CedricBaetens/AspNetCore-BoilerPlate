@@ -15,10 +15,10 @@ namespace Infrastructure
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Post> Posts { get; set; }
         
-        private readonly IDateTimeService _dateTime;
-        private readonly IAuthenticatedUserService _authenticatedUser;
+        private readonly IDateTimeProvider _dateTime;
+        private readonly IRequestContext _authenticatedUser;
 
-        public DatabaseContext(DbContextOptions<DatabaseContext> options, IDateTimeService dateTime, IAuthenticatedUserService authenticatedUser) : base(options)
+        public DatabaseContext(DbContextOptions<DatabaseContext> options, IDateTimeProvider dateTime, IRequestContext authenticatedUser) : base(options)
         {
             _dateTime = dateTime;
             _authenticatedUser = authenticatedUser;

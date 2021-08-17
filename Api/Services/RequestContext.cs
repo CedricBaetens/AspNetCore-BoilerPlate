@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Http;
 
 namespace Api.Services
 {
-    public class AuthenticatedUserService : IAuthenticatedUserService
+    public class RequestContext : IRequestContext
     {
-        public AuthenticatedUserService(IHttpContextAccessor httpContextAccessor)
+        public RequestContext(IHttpContextAccessor httpContextAccessor)
         {
             UserId = httpContextAccessor.HttpContext?.User?.FindFirstValue("uid");
         }

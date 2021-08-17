@@ -5,7 +5,6 @@ using Application.Blogs.Models;
 using Application.Interfaces;
 using AutoMapper;
 using Framework.Application;
-using Microsoft.EntityFrameworkCore;
 
 namespace Application.Blogs.Queries
 {

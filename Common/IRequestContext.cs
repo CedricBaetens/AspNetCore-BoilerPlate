@@ -1,6 +1,6 @@
 ﻿namespace Application.Interfaces
 {
-    public interface IAuthenticatedUserService
+    public interface IRequestContext
     {
         string UserId { get; }
         public string Username { get; }

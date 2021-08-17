@@ -3,7 +3,7 @@ using Application.Interfaces;
 
 namespace Api.Services
 {
-    public class SystemDateTimeService : IDateTimeService
+    public class SystemDateTimeProvider : IDateTimeProvider
     {
         public DateTime UtcNow => DateTime.UtcNow;
     }

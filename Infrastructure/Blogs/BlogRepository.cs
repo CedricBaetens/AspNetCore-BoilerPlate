@@ -7,6 +7,10 @@ using Domain.Blogs;
 
 namespace Infrastructure.Repositories
 {
+    public interface IBlogRepository : IRepository<Blog>
+    {
+        
+    }
     public class BlogRepository : Repository<Blog>, IBlogRepository
     {
         public BlogRepository(DatabaseContext dbContext) : base(dbContext)
