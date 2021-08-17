@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Blogs.Models;
+using Application.Blogs.Services;
 using Application.Interfaces;
 using AutoMapper;
 using Framework.Application;
@@ -14,20 +15,15 @@ namespace Application.Blogs.Queries
 
     public class GetBlogsQueryHandler : IQueryHandler<GetBlogsQuery, IEnumerable<BlogDto>>
     {
-        private readonly IBlogRepository _blogRepository;
-        private readonly IMapper _mapper;
-
-        public GetBlogsQueryHandler(IBlogRepository blogRepository, IMapper mapper)
+        private readonly IBlogService _blogService;
+        public GetBlogsQueryHandler(IBlogService blogService)
         {
-            _blogRepository = blogRepository;
-            _mapper = mapper;
+            _blogService = blogService;
         }
 
         public async Task<IEnumerable<BlogDto>> Handle(GetBlogsQuery request, CancellationToken cancellationToken)
         {
-            var blogs = await _blogRepository.GetAllAsync();
-
-            var result = _mapper.Map<IEnumerable<BlogDto>>(blogs);
+            var result = await _blogService.GetAll();
 
             return result;
         }
